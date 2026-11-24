@@ -56,3 +56,10 @@ def test_yhdeksan_aikuisen_hinta():
 def test_kymmenen_aikuisen_hinta():
     iat = [30] * 10
     assert kokonaishinta(iat) == 135.00
+
+@pytest.mark.parametrize(
+    "ika",
+    [18, 20, 64]
+)
+def test_opiskelijan_lippuhinta(ika):
+    assert lippuhinta(ika, opiskelija=True) == 10.0
